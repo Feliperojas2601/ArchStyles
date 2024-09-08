@@ -19,7 +19,4 @@ La arquitectura en capas organiza la aplicación en diferentes capas técnicas, 
 
 ### Funcionalidades Básicas
 
-- **Usuarios**: Registro, inicio de sesión y administración básica de usuarios.
 - **Tareas**: CRUD (Crear, Leer, Actualizar, Eliminar) de tareas.
-- **Etiquetas**: CRUD de etiquetas que pueden ser asociadas a tareas.
-- **Prioridades y Estados**: Permitir asignar prioridades y estados a las tareas (pendiente, en progreso, completado).
