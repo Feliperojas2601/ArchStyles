@@ -1,0 +1,20 @@
+<!-- task-board.component.html -->
+<div class="max-w-md mx-auto mt-8 p-4 bg-white rounded-lg shadow-md">
+    <div class="flex justify-between mb-4">
+      <button (click)="addTask('New Task')" class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600">
+        +
+      </button>
+      <button (click)="removeAllTasks()" class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600">
+        🗑️
+      </button>
+    </div>
+  
+    <div class="space-y-2">
+      <app-task-item 
+        *ngFor="let task of tasks" 
+        [task]="task" 
+        (deleteTask)="deleteTask(task)">
+      </app-task-item>
+    </div>
+</div>
+  
