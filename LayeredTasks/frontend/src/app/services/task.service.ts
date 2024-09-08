@@ -7,7 +7,7 @@ import { Task } from '../types/task.type';
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'http://backend:3000/tasks';
+  private apiUrl = '/api/tasks';
 
   constructor(private http: HttpClient) {}
 
