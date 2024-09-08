@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskService } from '../../services/task.service';
 import { TaskItemComponent } from '../task-item/task-item.component';
-import { Task } from '../../types/task.type';
+import { CreateTaskInput, Task } from '../../types/task.type';
 
 @Component({
   selector: 'app-task-board',
@@ -23,12 +23,14 @@ export class TaskBoardComponent {
   }
 
   addTask(taskName: string) {
-    const newTask: Task = { id: this.tasks.length + 1, name: taskName, completed: false };
-    this.taskService.updateTask(newTask).subscribe(task => this.tasks.push(task));
+    const newTask: CreateTaskInput = { name: taskName, completed: false };
+    this.taskService.createTask(newTask).subscribe(task => this.tasks.push(task));
   }
 
   deleteTask(task: Task) {
-    this.tasks = this.tasks.filter(t => t.id !== task.id);
+    this.taskService.deleteTask(task.id).subscribe(
+      () => this.tasks = this.tasks.filter(t => t.id !== task.id)
+    );
   }
 
   removeAllTasks() {

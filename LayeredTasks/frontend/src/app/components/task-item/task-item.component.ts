@@ -17,8 +17,7 @@ export class TaskItemComponent {
 
   constructor(private taskService: TaskService) {}
 
-  toggleCompletion() {
-    this.task.completed = !this.task.completed;
+  updateTask() {
     this.taskService.updateTask(this.task).subscribe(); 
   }
 
