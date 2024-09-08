@@ -1,6 +1,6 @@
 # LayeredTasks
 
-**LayeredTasks** es una aplicación de gestión de tareas que sigue la arquitectura en capas (Layered Architecture). Este proyecto está diseñado para proporcionar una solución organizada para la gestión de tareas, permitiendo a los usuarios crear, organizar y monitorear sus tareas de manera efectiva. Acceda a la interfaz de usuario en *localhost:4200*.
+**LayeredTasks** es una aplicación de gestión de tareas que sigue la arquitectura en capas (Layered Architecture). Este proyecto está diseñado para proporcionar una solución organizada para la gestión de tareas, permitiendo a los usuarios crear, organizar y monitorear sus tareas de manera efectiva. Acceda a la interfaz de usuario en `localhost:4200`
 
 ### Arquitectura en Capas
 
