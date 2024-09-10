@@ -15,4 +15,7 @@ docker-compose up
 
 1. **Layered Architecture (Arquitectura en Capas)**:
    - **Ejemplo**: `LayeredTasks`
+
+2. **Pipeline and Filters (Arquitectura de pipeline y filtros)**: 
+   - **Ejemplo**: `PipelineFiltersImageProcessing`
    
