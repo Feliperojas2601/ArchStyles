@@ -6,6 +6,8 @@
 
 La arquitectura **Pipeline and Filters** se implementa dentro de la capa de aplicación del backend, permitiendo que las imágenes pasen a través de una serie de filtros, cada uno con una responsabilidad bien definida. Para más información sobre este estilo consulte [ClassNotes](https://feliperojas2601.github.io/ClassNotesWeb/books/).
 
+![Vista de Componentes y Conectores](../Images/pfip_c&c.png)
+
 #### Descripción del Pipeline
 
 1. **Step 1**: Validación de la imagen.

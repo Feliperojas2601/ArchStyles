@@ -6,6 +6,8 @@
 
 La arquitectura en capas organiza la aplicación en diferentes capas técnicas, cada una con responsabilidades bien definidas. Para más información sobre este estilo consulte [ClassNotes](https://feliperojas2601.github.io/ClassNotesWeb/books/).
 
+![Vista de Componentes y Conectores](../Images/lt_c&c.png)
+
 #### Descripción de las Capas
 
 1. **Capa de Presentación (Frontend)**:
