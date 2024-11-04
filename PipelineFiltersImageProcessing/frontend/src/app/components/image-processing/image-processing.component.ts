@@ -1,9 +1,13 @@
 // image-processing.component.ts
 import { Component } from '@angular/core';
 import { ImageService } from '../../services/image.service';
+import { UploadImageComponent } from '../upload-image/upload-image.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-image-processing',
+  standalone: true,
+  imports: [UploadImageComponent, CommonModule],
   template: `
     <div class="min-h-screen flex flex-col items-center justify-center space-y-8">
       <h1 class="text-2xl font-bold">Image Processing Pipeline</h1>

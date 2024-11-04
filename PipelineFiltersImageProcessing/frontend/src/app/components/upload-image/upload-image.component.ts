@@ -1,7 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-upload-image',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <div class="flex flex-col items-center space-y-4">
       <input type="file" (change)="onFileSelected($event)" class="cursor-pointer" />
