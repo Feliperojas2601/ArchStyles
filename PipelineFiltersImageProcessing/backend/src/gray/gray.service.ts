@@ -4,8 +4,9 @@ import * as sharp from 'sharp';
 
 @Injectable()
 export class GrayService {
-  async processImage(imageBuffer: Buffer): Promise<Buffer> {
+  async processImage(file: Express.Multer.File): Promise<Buffer> {
     try {
+      const imageBuffer = file.buffer;
       const grayImageBuffer = await sharp(imageBuffer)
         .grayscale()
         .toBuffer();

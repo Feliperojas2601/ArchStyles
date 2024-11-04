@@ -21,7 +21,7 @@ export class AppService {
       response = await this.grayService.processImage(response);
       response = await this.resizeService.processImage(response);
       response = await this.saveService.processImage({
-        ...response,
+        data: response,
         filename: file.originalname,
       });
       return {
