@@ -1,8 +1,8 @@
-// image-processing.component.ts
 import { Component } from '@angular/core';
 import { ImageService } from '../../services/image.service';
 import { UploadImageComponent } from '../upload-image/upload-image.component';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-image-processing',
@@ -41,15 +41,27 @@ import { CommonModule } from '@angular/common';
 })
 export class ImageProcessingComponent {
   loading = false;
-  processedImageUrl: string | null = null;
+  processedImageUrl: SafeUrl | null = null;
 
-  constructor(private imageService: ImageService) {}
+  constructor(private imageService: ImageService, private domSanitizer: DomSanitizer) {}
 
   handleImageUpload(file: File) {
     this.loading = true;
     this.imageService.processImage(file).subscribe({
-      next: (response: { data: any | null; }) => {
-        this.processedImageUrl = response.data;
+      next: (response: any) => {
+        const processedImageBuffer = response.data.data.data;
+        console.log('Processed image buffer:', processedImageBuffer);
+        if (!processedImageBuffer) {
+          console.error('Error processing image: No data returned');
+          this.loading = false;
+          return;
+        }
+        const typedArray = new Uint8Array(processedImageBuffer);
+        const stringChar = typedArray.reduce((data, byte) => {
+          return data + String.fromCharCode(byte);
+        }, '');
+        const base64String = btoa(stringChar);
+        this.processedImageUrl = this.domSanitizer.bypassSecurityTrustUrl(`data:image/jpeg;base64,${base64String}`);
         this.loading = false;
       },
       error: (error: any) => {
