@@ -7,6 +7,7 @@ import { GrayModule } from './gray/gray.module';
 import { ResizeModule } from './resize/resize.module';
 import { SaveModule } from './save/save.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Image } from './save/models/image.model';
 
 @Module({
   imports: [ValidModule, GrayModule, ResizeModule, SaveModule, TypeOrmModule.forRoot({
@@ -16,7 +17,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     username: 'postgres',
     password: 'password',
     database: 'tasksdb',
-    entities: [__dirname + '/**/*.entity{.ts,.js}'],
+    entities: [Image],
     synchronize: true, 
   }),],
   controllers: [AppController],
